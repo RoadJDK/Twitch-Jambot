@@ -5,11 +5,11 @@ using System.Runtime.InteropServices;
 // General Information about an assembly is controlled through the following
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
-[assembly: AssemblyTitle("TwitchJamBot")]
+[assembly: AssemblyTitle("LOLInstalocker")]
 [assembly: AssemblyDescription("")]
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("HP Inc.")]
-[assembly: AssemblyProduct("TwitchJamBot")]
+[assembly: AssemblyProduct("LOLInstalocker")]
 [assembly: AssemblyCopyright("Copyright © HP Inc. 2021")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // The following GUID is for the ID of the typelib if this project is exposed to COM
-[assembly: Guid("d8e20b8c-0101-49ea-9932-7fe56c27341d")]
+[assembly: Guid("55058bc1-ef6d-4db5-900c-6a8e14798a0a")]
 
 // Version information for an assembly consists of the following four values:
 //
