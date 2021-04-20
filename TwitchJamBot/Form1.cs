@@ -11,7 +11,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LOLInstalocker
+namespace TwitchJamBot
 {
     public partial class InstaLocker : System.Windows.Forms.Form
     {
@@ -35,7 +35,9 @@ namespace LOLInstalocker
 
         private Random random = new Random();
         private bool running = false;
+
         private List<string> Jams;
+        private decimal Delay;
 
         /// <summary>
         /// Initialize Form
@@ -77,6 +79,16 @@ namespace LOLInstalocker
         /// <param name="m"></param>
         protected override void WndProc(ref Message m)
         {
+            switch (m.Msg)
+            {
+                case 0x84:
+                    base.WndProc(ref m);
+                    if ((int)m.Result == 0x1)
+                        m.Result = (IntPtr)0x2;
+                    return;
+            }
+            base.WndProc(ref m);
+
             if (m.Msg == 0x0312 && m.WParam.ToInt32() == MYACTION_HOTKEY_ID)
             {
                 if (running == false)
@@ -84,6 +96,8 @@ namespace LOLInstalocker
                     running = true;
                     OnOff.BackColor = Color.FromArgb(0, 192, 0);
                     Jams = JAM.Text.Split(',').ToList();
+                    Delay = DelayCount.Value;
+                    TIMER.Interval = Convert.ToInt32(Delay*1000);///s to ms
                     TIMER.Start();
                 }
                 else

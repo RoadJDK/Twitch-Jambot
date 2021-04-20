@@ -1,5 +1,5 @@
 ﻿
-namespace LOLInstalocker
+namespace TwitchJamBot
 {
     partial class InstaLocker
     {
@@ -30,13 +30,17 @@ namespace LOLInstalocker
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InstaLocker));
             this.label1 = new System.Windows.Forms.Label();
             this.JAM = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.TIMER = new System.Windows.Forms.Timer(this.components);
-            this.Close = new System.Windows.Forms.PictureBox();
             this.OnOff = new System.Windows.Forms.Panel();
+            this.DelayCount = new System.Windows.Forms.NumericUpDown();
+            this.label2 = new System.Windows.Forms.Label();
+            this.Close = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.DelayCount)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).BeginInit();
             this.SuspendLayout();
             // 
@@ -87,17 +91,6 @@ namespace LOLInstalocker
             this.TIMER.Interval = 20000;
             this.TIMER.Tick += new System.EventHandler(this.TIMER_Tick);
             // 
-            // Close
-            // 
-            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.Close.InitialImage = null;
-            this.Close.Location = new System.Drawing.Point(248, 12);
-            this.Close.Name = "Close";
-            this.Close.Size = new System.Drawing.Size(26, 22);
-            this.Close.TabIndex = 8;
-            this.Close.TabStop = false;
-            this.Close.Click += new System.EventHandler(this.Close_Click);
-            // 
             // OnOff
             // 
             this.OnOff.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(0)))));
@@ -106,11 +99,50 @@ namespace LOLInstalocker
             this.OnOff.Size = new System.Drawing.Size(10, 10);
             this.OnOff.TabIndex = 9;
             // 
+            // DelayCount
+            // 
+            this.DelayCount.Font = new System.Drawing.Font("Century Gothic", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DelayCount.Location = new System.Drawing.Point(56, 191);
+            this.DelayCount.Name = "DelayCount";
+            this.DelayCount.Size = new System.Drawing.Size(40, 21);
+            this.DelayCount.TabIndex = 10;
+            this.DelayCount.Value = new decimal(new int[] {
+            20,
+            0,
+            0,
+            0});
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century Gothic", 10F);
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(52, 169);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(68, 19);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Delay (s)";
+            // 
+            // Close
+            // 
+            this.Close.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.Close.Image = ((System.Drawing.Image)(resources.GetObject("Close.Image")));
+            this.Close.InitialImage = null;
+            this.Close.Location = new System.Drawing.Point(248, 12);
+            this.Close.Name = "Close";
+            this.Close.Size = new System.Drawing.Size(26, 22);
+            this.Close.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.Close.TabIndex = 8;
+            this.Close.TabStop = false;
+            this.Close.Click += new System.EventHandler(this.Close_Click);
+            // 
             // InstaLocker
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(41)))), ((int)(((byte)(44)))), ((int)(((byte)(51)))));
             this.ClientSize = new System.Drawing.Size(286, 329);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.DelayCount);
             this.Controls.Add(this.OnOff);
             this.Controls.Add(this.Close);
             this.Controls.Add(this.label4);
@@ -120,6 +152,7 @@ namespace LOLInstalocker
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "InstaLocker";
             this.Text = "Instalocker";
+            ((System.ComponentModel.ISupportInitialize)(this.DelayCount)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.Close)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -133,8 +166,10 @@ namespace LOLInstalocker
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Timer TIMER;
-        private System.Windows.Forms.PictureBox Close;
         private System.Windows.Forms.Panel OnOff;
+        private System.Windows.Forms.NumericUpDown DelayCount;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.PictureBox Close;
     }
 }
 
